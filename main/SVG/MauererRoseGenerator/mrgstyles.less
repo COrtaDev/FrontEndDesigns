@@ -1,0 +1,53 @@
+:root {
+    --color-background: plum;
+    --color-line: midnightblue;
+  }
+  
+  :root,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-line);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: sans-serif;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  svg {
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    stroke-width: 0.25;
+    overflow: visible;
+  }
+  
+  .control {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  input[type="range"] {
+    flex-grow: 1;
+  }
+  
+  label {
+    font-size: 1.6rem;
+    font-style: italic;
+  }
+  
