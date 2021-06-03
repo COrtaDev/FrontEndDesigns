@@ -1,0 +1,126 @@
+$red: #E62B35;
+$orange: #FF7A0D;
+$yellow: #FFCA3A;
+$green: #6FB84A;
+$blue: #1982c4;
+$purple: #6f2dbd;
+
+$pink: #EFA7A7;
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+$font: 'Fredoka One', sans-serif;
+
+body {
+  background: $pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: $font;
+  overflow: hidden;
+  font-size: 16px;
+}
+.container {
+  width: 740px;
+  height: 400px;
+  position: relative;
+}
+.june {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  position: absolute;
+  margin-left: 2%;
+  font-size: 20em;
+  .hide {
+    color: transparent;
+    text-shadow: 1px 1px 1px transparent;
+  }
+  .move {
+    margin-left: -25px;
+  }
+}
+.rainbow {
+  position: absolute;
+  top: 74%;
+  left: 41%;
+  width: 30%;
+  height: 19%;
+  box-shadow:
+      0 0 0 1em $purple,
+      0 0 0 2em $blue,
+      0 0 0 3em $green,
+      0 0 0 4em $yellow,
+      0 0 0 5em $orange,
+      0 0 0 6em $red;
+  border-radius: 50px;
+  transform: rotate(-90deg);
+  &:before {
+    content: '';
+    width: 130%;
+    height: 380%;
+    background-color: $pink;
+    position: absolute;
+    left: -70%;
+    top: -150%;
+  }
+}
+
+.text {
+  position: absolute;
+  font-size: 3em;
+  bottom: 12%;
+  right: 4%;
+}
+@media only screen and (max-width: 770px) {
+  .container {
+    width: 540px;
+    height: 300px;
+  }
+  .june {
+    font-size: 14em;
+  }
+  .rainbow {
+    transform: scale(.7) rotate(-90deg);
+    top: 65%;
+    left: 38%;
+    &:before {
+      height: 450%;
+      top: -170%;
+    }
+  }
+  .text {
+    font-size: 2em;
+    right: 10%;
+    bottom: 15%;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .container {
+    width: 350px;
+    height: 200px;
+  }
+  .june {
+    font-size: 8em;
+    margin-left: 20px;
+    .move {
+      margin-left: 5px;
+    }
+  }
+  .rainbow {
+    transform: scale(.5) rotate(-90deg);
+    top: 51%;
+    left: 39%;
+    &:before {
+      top: -260%;
+      left: -100%;
+      width: 150%;
+      height: 620%;
+    }
+  }
+  .text {
+    bottom: 25%;
+    font-size: 1.5em;
+  }
+}
