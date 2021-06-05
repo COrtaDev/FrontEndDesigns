@@ -1,0 +1,129 @@
+body{
+  background: #001C2F
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 20px;
+  height: 4vh;
+  width: 100%;
+  background: #1A3344;
+  border: none;
+  
+}
+
+/*Styling the progress bar*/
+progress::-moz-progress-bar{
+  border-radius: 20px;
+  background: linear-gradient(to right, #0eb98f 0%,#4db3ff 100%);
+}
+
+progress::-webkit-progress-bar{
+  border-radius: 20px;
+  background: #0eb98f;
+  background: linear-gradient(to right, #0eb98f 0%,#4db3ff 100%);
+}
+
+/*Container for the loading component*/
+.loader-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+/*Typography*/
+p.headline{
+  font-size: 44px;
+  margin-bottom: 12px;p
+    margin-top: 40px;
+}
+
+p.subtitle{
+  font-size: 22px;
+  margin-top: 0;
+}
+
+p{
+  color: white;
+
+  font-size: 44px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/*Loading bars*/
+
+.loader-bars{
+    display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.loader-bars div{
+  height: 20vh;
+  width: 8vh;
+  background: #22B88E;
+  animation: example 2.8s infinite;
+}
+
+
+
+.loader-bars div:nth-child(1){
+  animation-delay: 0s;
+  background: #1A9F8C
+}
+
+.loader-bars div:nth-child(2){
+  animation-delay: 0.2s;
+  background: #1EAB8D
+}
+
+.loader-bars div:nth-child(3){
+  animation-delay: 0.4s;
+  background: #20B38E
+}
+
+.loader-bars div:nth-child(4){
+  animation-delay: 0.6s;
+  background: #22B78D
+}
+
+.loader-bars div:nth-child(5){
+  animation-delay: 0.8s;
+  background: #22B88E
+}
+
+.loader-bars div:nth-child(6){
+  animation-delay: 1s;
+  background: #21B48D
+}
+
+.loader-bars div:nth-child(7){
+  animation-delay: 1.2s;
+  background: #1EAF8E;
+}
+
+.loader-bars div:nth-child(8){
+  animation-delay: 1.4s;
+  background: #1CA48D;
+}
+
+.loader-bars div:nth-child(9){
+  animation-delay: 1.6s;
+  background: #17968B
+}
+
+.loader-bars div:nth-child(10){
+  animation-delay: 1.8s;
+  background: #128688
+}
+
+@keyframes example {
+  from {transform: scaleY(1);}
+  50% { transform: scaleY(0.2);}
+}
