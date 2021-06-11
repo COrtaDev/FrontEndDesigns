@@ -1,0 +1,148 @@
+<!--
+
+1. Slide Navigation
+2. Slide Animations with CSS Variables
+3. Stat Placement on a circle
+
+-->
+
+<div id="root"></div>
+
+<script>
+  const slides = [{
+      image: "https://images.unsplash.com/photo-1621061415651-2b7fa415360b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTg4NzkwOQ&ixlib=rb-1.2.1&q=80&w=800&h=800&fit=facearea&facepad=5",
+      name: "Lamar J.",
+      quote: "Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet.",
+      stats: [{
+          label: "Time",
+          value: "~4 years"
+        },
+        {
+          label: "Visits",
+          value: "11"
+        },
+        {
+          label: "Funds",
+          value: "$2,201"
+        },
+        {
+          label: "Outcome",
+          value: "Found housing, employment"
+        },
+      ]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1621188300102-afe44791fe3b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTg4ODA2OA&ixlib=rb-1.2.1&q=80&w=800&h=800&fit=facearea&facepad=5",
+      name: "Nicole S.",
+      quote: "Aliquam eu iaculis mauris. Etiam arcu lectus, imperdiet sit amet volutpat vitae.",
+      stats: [{
+          label: "Time",
+          value: "10 years"
+        },
+        {
+          label: "Visits",
+          value: "14"
+        },
+        {
+          label: "Funds",
+          value: "$925"
+        },
+        {
+          label: "Outcome",
+          value: "Improved health, found employment"
+        },
+      ]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1551861568-c0afa6653bc1?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTg4ODU5Ng&ixlib=rb-1.2.1&q=80&w=800&h=800&fit=facearea&facepad=5",
+      name: "Pamela W.",
+      quote: "Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio.",
+      stats: [{
+          label: "Time",
+          value: "3 years"
+        },
+        {
+          label: "Visits",
+          value: "6"
+        },
+        {
+          label: "Funds",
+          value: "$325"
+        },
+        {
+          label: "Outcome",
+          value: "Improved health, found housing"
+        }
+      ]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1603208636525-8825c33ed34b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTg4ODIzOQ&ixlib=rb-1.2.1&q=80&w=800&h=800&fit=facearea&facepad=5",
+      name: "Will K.",
+      quote: "Aliquam tempus odio adipiscing diam pellentesque rhoncus. Curabitur a bibendum est.",
+      stats: [{
+          label: "Time",
+          value: "~3 years"
+        },
+        {
+          label: "Visits",
+          value: "6"
+        },
+        {
+          label: "Funds",
+          value: "$240/mo"
+        },
+        {
+          label: "Outcome",
+          value: "Improved health, employment"
+        }
+      ]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1593339915213-a94e3b1a0f64?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTg4ODM3OA&ixlib=rb-1.2.1&q=80&w=800&h=800&fit=facearea&facepad=5",
+      name: "Barb R.",
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum, lorem vel tincidunt imperdiet.",
+      stats: [{
+          label: "Time",
+          value: "5 years"
+        },
+        {
+          label: "Visits",
+          value: "3"
+        },
+        {
+          label: "Funds",
+          value: "$240/mo"
+        },
+        {
+          label: "Outcome",
+          value: "Found housing, improved health"
+        }
+      ]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1620506117452-99cd6b6dcd3e?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMTg4ODg0OQ&ixlib=rb-1.2.1&q=80&w=800&h=800&fit=facearea&facepad=5",
+      name: "Chuck C.",
+      quote: "Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien.",
+      stats: [{
+          label: "Time",
+          value: "6 years"
+        },
+        {
+          label: "Visits",
+          value: "9"
+        },
+        {
+          label: "Funds",
+          value: "$270/mo"
+        },
+        {
+          label: "Outcome",
+          value: "Improved health, housing"
+        }
+      ]
+    }
+  ];
+</script>
+
+<a href="https://youtu.be/xpeNysvnjNQ" target="_blank" data-keyframers-credit style="color: #FFF"></a>
+<script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
