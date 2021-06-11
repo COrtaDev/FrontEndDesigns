@@ -1,0 +1,25 @@
+body{
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.para-container{
+  width:500px;
+  height:500px;
+  border:5px solid;
+  border-radius:50%;
+}
+
+.para-container p{
+  background-image:url('https://static.wikia.nocookie.net/f05bcfd2-cb01-4918-b55b-2398ade08213/scale-to-width/755');
+  background-size:550px;
+  background-repeat:no-repeat;
+  background-position:center top;
+  font-weight:bolder;
+  font-family:helvetica;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
