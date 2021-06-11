@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap");
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+:root {
+  --duration: 0.8s;
+  --color-purple: #828dd6;
+}
+
+html {
+  font-size: clamp(11px, 2vmin, 18px);
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Raleway, sans-serif;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  background: #23274a;
+  color: white;
+  text-shadow: 0 2px 0 #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+// ......
+
+.app {
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: 1fr;
+
+  > .dashes {
+    margin: -1rem;
+    stroke: var(--color-purple);
+    stroke-linecap: round;
+    stroke-width: 0.6;
+    animation: rotate 15s linear infinite;
+    @keyframes rotate {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+  }
+  > .dashes,
+  > .slide {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  > .button.-next {
+    grid-column: -2 / -1;
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+}
+
+.slide {
+  padding: 2rem;
+  --radius: 35vw;
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  display: grid;
+  grid-template-areas: "layer";
+  place-items: center;
+  --default-animation: fade-in;
+  --name-animation: name-enter;
+  --image-animation: image-enter;
+  --stat-animation: stat-enter;
+  --quote-animation: quote-enter;
+  --delay: var(--duration);
+
+  > * {
+    grid-area: layer;
+    animation: var(--default-animation) var(--duration) ease-in-out var(--delay)
+      both;
+  }
+
+  > .slide-name {
+    align-self: end;
+    z-index: 2;
+  }
+
+  &[data-previous] {
+    z-index: 2;
+
+    --default-animation: fade-out;
+    --name-animation: name-exit;
+    --image-animation: image-exit;
+    --stat-animation: stat-exit;
+    --quote-animation: quote-exit;
+    --delay: 0s;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.slide-name {
+  text-align: center;
+  font-size: 4.5rem;
+  --default-animation: var(--name-animation);
+}
+
+.slide-image {
+  --default-animation: var(--image-animation);
+}
+
+.slide-stat {
+  --default-animation: var(--stat-animation);
+}
+
+.slide-quote {
+  --default-animation: var(--quote-animation);
+}
+
+@keyframes name-enter {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes name-exit {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes image-enter {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes image-exit {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+}
+
+@property --r-offset {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0turn;
+}
+
+@keyframes stat-enter {
+  from {
+    --r-offset: -0.5turn;
+    opacity: 0;
+  }
+}
+@keyframes stat-exit {
+  to {
+    --r-offset: -0.3turn;
+    opacity: 0;
+  }
+}
+
+@keyframes quote-enter {
+  from {
+    transform: translate(75%, -150%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(100%, -200%);
+    opacity: 1;
+  }
+}
+
+@keyframes quote-exit {
+  from {
+    transform: translate(100%, -200%);
+    opacity: 1;
+  }
+  to {
+    transform: translate(75%, -150%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.slide-image {
+  border-radius: 100vw;
+  box-shadow: 0 0.5rem 2rem #0007;
+}
+
+.slide-stat,
+.slide-quote {
+  --transform: rotate(var(--r)) translate(var(--radius))
+    rotate(calc(-1 * var(--r)));
+  transform: var(--transform);
+}
+
+.slide-quote {
+  top: 0;
+  left: 0;
+  box-shadow: 0 1rem 2rem #000a;
+  min-width: 15rem;
+}
+
+.slide-stat {
+  display: inline-block;
+  color: #fff;
+  max-width: 16em;
+  z-index: 3;
+
+  --d: calc(var(--i) / var(--stats));
+  --r-offset: -0.4turn;
+  --r: calc(var(--r-offset) + (-0.3turn * var(--d)));
+
+  &:last-of-type {
+    --r: calc(var(--r-offset) + 0.45turn);
+  }
+}
+
+.slide-quote {
+  background: linear-gradient(45deg, #23274a, lighten(#23274a, 10%));
+  padding: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  max-width: 12em;
+  --r: 0.9turn;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  opacity: 0.7;
+  letter-spacing: 0.5ch;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.stat-value {
+  font-size: 2rem;
+}
+
+.button {
+  z-index: 999999;
+  text-transform: uppercase;
+  appearance: none;
+  background: white;
+  color: #1b1d3a;
+  font-weight: bold;
+  height: 12vmin;
+  width: 12vmin;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  line-height: 1.5;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
