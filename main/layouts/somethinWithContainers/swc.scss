@@ -1,0 +1,157 @@
+:root {
+  --color1: hsl(130, 95%, 85%);
+  --color2: hsl(250, 95%, 85%);
+  --color3: hsl(310, 95%, 85%);
+  --color4: hsl(380, 95%, 85%);
+  --color5: hsl(430, 95%, 85%);
+  --color-text: hsla(0, 0%, 10%, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+:is(h1, h2, header, .button) {
+  font-family: "Rubik", sans-serif;
+}
+
+:is(h1, h2) {
+  line-height: 1.1;
+}
+
+main,
+header {
+  padding: 1rem;
+}
+
+header {
+  min-height: 40vh;
+  display: grid;
+  place-content: center;
+  grid-gap: 0.5rem;
+  text-align: center;
+  background-color: var(--color2);
+
+  a {
+    font-size: 1.3rem;
+  }
+}
+
+a {
+  color: inherit;
+
+  &:focus-visible {
+    outline: 1px solid currentcolor;
+    outline-offset: 0.15em;
+  }
+}
+
+.article-container {
+  contain: layout inline-size;
+  display: grid;
+
+  // Flip all the things!
+  // This is one possible method, see the @container query for a comment on the alternate way
+  &:nth-child(odd) {
+    --template: 30ch 10% 1fr;
+    --img-col-start: 2;
+    --img-col-end: 4;
+    --content-col-start: 1;
+    --content-col-end: 3;
+    --img-border-radius: 0 3rem 3rem 0;
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-child(5n + #{$i}) {
+      --background: var(--color#{$i});
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 5vh auto;
+  width: min(140ch, 90vw);
+
+  .article-container {
+    flex: 1 1 40ch;
+  }
+}
+
+article {
+  display: grid;
+  grid-template-rows: 1fr 3rem max(1fr, 30vh);
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(black, 0.35);
+  overflow: hidden;
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.65em;
+  }
+
+  img,
+  .content {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  img {
+    aspect-ratio: 3/1;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .content {
+    background-color: var(--background);
+    padding: 2rem;
+    border-radius: 3rem 3rem 0 0;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+}
+
+@container (min-width: 60ch) {
+  // Alternative to the Custom Properties solution, we could have used this selector setup to swap the grid template properties
+  // .article-container:nth-child(odd) article { }
+
+  article {
+    display: grid;
+    grid-template-columns: var(--template, 1fr 10% 30ch);
+    grid-template-rows: unset;
+
+    img,
+    .content {
+      grid-row-start: 1;
+      grid-row-end: 1;
+    }
+
+    img {
+      height: 100%;
+      grid-column-start: var(--img-col-start, 1);
+      grid-column-end: var(--img-col-end, 3);
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .content {
+      grid-column-start: var(--content-col-start, 2);
+      grid-column-end: var(--content-col-end, 4);
+      border-radius: var(--img-border-radius, 3rem 0 0 3rem);
+    }
+  }
+}
