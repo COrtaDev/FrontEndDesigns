@@ -1,0 +1,37 @@
+.summerdream
+  .sea
+    .surface
+  .ship
+    .rotate
+      .move
+        .body
+          .waves
+            .bodywaves
+              - for (i = 0; i < 50; i++)
+                .wave
+                  .graphic
+            .oarwaves.-left
+              - for (i = 0; i < 20; i++)
+                .wave
+                  .graphic
+            .oarwaves.-right
+              - for (i = 0; i < 20; i++)
+                .wave
+                  .graphic
+          .base
+          .board.-front
+          .board.-back
+        .oars
+          .oar.-left
+            .row.-left
+              .depth.-left
+                .graphic.-left
+          .oar.-right
+            .row.-right
+              .depth.-right
+                .graphic.-right
+        .human
+          .legs
+            .leg.-left
+            .leg.-right
+          .hat
