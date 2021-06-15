@@ -1,0 +1,272 @@
+html {
+	font-size: 100%;
+} /*16px*/
+
+body {
+	font-weight: 400;
+	line-height: 1.75;
+	background: #f5ebdc;
+	color: #2b0200;
+	font-family: "Raleway", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: "Staatliches", cursive;
+	margin: 3rem 0 1.38rem;
+	font-weight: 400;
+	line-height: 1.3;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 3.052rem;
+}
+
+h2 {
+	font-size: 2.441rem;
+}
+
+h3 {
+	font-size: 1.953rem;
+}
+
+header,
+main {
+	margin: 0 auto;
+	width: 95%;
+	max-width: 1024px;
+}
+
+header {
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 4px solid #d62400;
+	border-radius: 0.25rem;
+}
+
+.logo {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	&__icon {
+		height: 100%;
+		width: 65px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			height: 50%;
+			margin: 1rem 0;
+			transform: rotate(-45deg);
+			fill: transparent;
+			stroke: #d62400;
+			stroke-width: 1.65rem;
+			overflow: visible;
+			transition: 0.2s ease;
+		}
+	}
+	&__text {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		padding: 0 0.75rem;
+		#brand-name {
+			padding: 0;
+			margin: 0;
+		}
+		.tagline {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	&:hover {
+		.logo__icon {
+			svg {
+				fill: #d62400;
+				stroke-width: 0;
+			}
+		}
+	}
+}
+
+.item {
+	display: flex;
+	flex-flow: column;
+	padding: 2rem 1rem;
+	border-radius: 0.25rem;
+	&__image {
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		width: 100%;
+		flex: 1;
+		aspect-ratio: 16/9;
+		border-radius: 0.25rem;
+		@media (min-width: 768px) {
+			aspect-ratio: 1/1;
+		}
+		position: relative;
+		overflow: hidden;
+		> img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 0.25rem 1rem;
+			background: transparentize(#2b0200, 0.4);
+			color: white;
+			border-top-left-radius: 0.25rem;
+		}
+	}
+	&__content {
+		flex: 2;
+		padding: 1rem;
+		display: flex;
+		flex-flow: column;
+		gap: 1rem;
+		justify-content: center;
+		h3 {
+			padding: 0;
+			margin: 0;
+		}
+		p {
+			padding: 0;
+			margin: 0;
+		}
+		.price,
+		.special {
+			font-size: 1.25rem;
+			padding: 0;
+			margin: 0;
+			font-family: "Staatliches", cursive;
+		}
+	}
+	&__options {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		@media (min-width: 768px) {
+			flex-flow: row;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 1rem;
+		}
+		label {
+			font-family: "Staatliches", cursive;
+		}
+		.select {
+			width: 100%;
+			position: relative;
+			display: inline-block;
+			margin-bottom: 1rem;
+			@media (min-width: 768px) {
+				width: auto;
+				margin-bottom: 0;
+			}
+		}
+		.select select {
+			width: 100%;
+			font-family: "Staatliches", cursive;
+			display: inline-block;
+			cursor: pointer;
+			padding: 0.5rem 2rem 0.5rem 0.75rem;
+			outline: 0;
+			border: 0px solid #000000;
+			border-radius: 0.25rem;
+			background: #ffffff;
+			color: #2b0200;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			@media (min-width: 768px) {
+				width: auto;
+			}
+		}
+		.select select::-ms-expand {
+			display: none;
+		}
+		.select select:hover,
+		.select select:focus {
+			color: #2b0200;
+			background: #ffffff;
+		}
+		.select select:disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+		.select_arrow {
+			position: absolute;
+			top: 0.7rem;
+			right: 1rem;
+			width: 0px;
+			height: 0px;
+			border: solid #d62400;
+			border-width: 0 3px 3px 0;
+			display: inline-block;
+			padding: 3px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+		}
+		.select select:hover ~ .select_arrow,
+		.select select:focus ~ .select_arrow {
+			border-color: #d62400;
+		}
+		.select select:disabled ~ .select_arrow {
+			border-top-color: #cccccc;
+		}
+	}
+	&__actions {
+		button {
+			font-family: "Staatliches", cursive;
+			cursor: pointer;
+			font-size: 1.25rem;
+			background: #d62400;
+			color: #f5ebdc;
+			padding: 0.5rem 1rem;
+			border: 0;
+			border-radius: 0.25rem;
+			transition: background 0.2s ease;
+			&:hover {
+				background: darken(#d62400, 5%);
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		flex-flow: row;
+		&:nth-child(even) {
+			background: #d62400;
+			color: #f5ebdc;
+			.item__image {
+				order: 2;
+			}
+			.item__actions {
+				button {
+					background: #f5ebdc;
+					color: #d62400;
+					&:hover {
+						background: darken(#f5ebdc, 5%);
+					}
+				}
+			}
+		}
+	}
+}
