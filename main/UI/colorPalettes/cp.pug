@@ -1,0 +1,57 @@
+.container
+	.paletteWrap.clearfix
+	
+		mixin paletteItemMix(firstColorMix, secondColorMix, thirdColorMix, fourthColorMix, firstHexColorMix, seconHexdColorMix, thirdHexColorMix, fourtHexhColorMix)
+			.paletteItem
+				.paletteItem__schemeBox
+					.paletteItem__colorScheme.paletteItem__colorScheme_square
+						each val in [`${firstColorMix}`, `${secondColorMix}`, `${thirdColorMix}`, `${fourthColorMix}`]
+							.paletteItem__colorItem(class=`paletteItem__colorItem_${val}`)
+					.paletteItem__colorScheme.paletteItem__colorScheme_vertical
+						each val in [`${firstColorMix}`, `${secondColorMix}`, `${thirdColorMix}`, `${fourthColorMix}`]
+							.paletteItem__colorItem(class=`paletteItem__colorItem_${val}`)
+					.paletteItem__colorScheme.paletteItem__colorScheme_horizontal
+						each val in [`${firstColorMix}`, `${secondColorMix}`, `${thirdColorMix}`, `${fourthColorMix}`]
+							.paletteItem__colorItem(class=`paletteItem__colorItem_${val}`)
+				.paletteItem__infoBox
+					each val in [`${firstHexColorMix}`, `${seconHexdColorMix}`, `${thirdHexColorMix}`, `${fourtHexhColorMix}`]
+						.paletteItem__colorBox
+							p.paletteItem__colorName ##{val}
+
+		+paletteItemMix('1', '2', '3', '4', 'f5f4e8', 'c50d66', 'f07810', 'eec60a')
+		+paletteItemMix('5', '6', '7', '8', '13334c', '005792', 'f6f6e9', 'fd5f00')
+		+paletteItemMix('9', '10', '11', '12', '57D1C9', 'ED5485', 'FFFBCB', 'FFE869')
+		+paletteItemMix('13', '14', '15', '16', 'F8F9FC', 'C00000', 'DE3C3C', 'F7B32D')
+		+paletteItemMix('17', '18', '19', '20', '003246', 'E4491C', '0387B1', 'F5F5F5')
+		+paletteItemMix('21', '22', '23', '24', 'ff5108', 'fffdf8', 'ff2321', '000000')
+		+paletteItemMix('25', '26', '27', '28', '7abed1', 'f05945', 'f7f3e9', 'f05945')
+		+paletteItemMix('29', '30', '31', '32', 'FFFC31', 'F6F7EB', 'E94F37', '393E41')
+		+paletteItemMix('33', '34', '35', '36', '518f8b', 'e3e1c8', '472c33', 'e6462d')
+		+paletteItemMix('37', '38', '39', '40', 'c12127', '2a333c', 'ffffff', '8f9299')
+		+paletteItemMix('41', '42', '43', '44', 'EDEDE4', 'F74906', '554E44', 'FFFFFF')
+		+paletteItemMix('45', '46', '47', '48', '221E1D', 'ECEAE0', '63AA9C', 'E9633B')
+		+paletteItemMix('49', '50', '51', '52', 'a10015', 'd52b15', 'efeee9', 'beb1b4')
+		+paletteItemMix('53', '54', '55', '56', '222831', '393E46', 'FD7013', 'EEEEEE')
+		+paletteItemMix('57', '58', '59', '60', 'FF7260', '9BD7D5', 'FFF5C3', '505050')
+		+paletteItemMix('61', '62', '63', '64', 'FF3B1D', '7BDFF2', '000000', 'FFFFFF')
+		
+		
+//--- Social links
+.social
+	ul.socialList
+		li.socialList__item
+			a.socialList__link(href="https://github.com/Kerthin?tab=overview&from=2021-05-01&to=2021-05-05" target="_blank")
+				svg.socialList__icon(viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+					path(d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22")
+		li.socialList__item
+			a.socialList__link(href="https://codepen.io/Astap" target="_blank")
+				svg.socialList__icon(viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+					polygon(points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2")
+					line(x1="12" y1="22" x2="12" y2="15.5")
+					polyline(points="22 8.5 12 15.5 2 8.5")
+					polyline(points="2 15.5 12 8.5 22 15.5")
+					line(x1="12" y1="2" x2="12" y2="8.5")
+		li.socialList__item
+			a.socialList__link(href="https://twitter.com/BelichenkoRoden" target="_blank")
+				svg.socialList__icon(viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+					path(d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z")
