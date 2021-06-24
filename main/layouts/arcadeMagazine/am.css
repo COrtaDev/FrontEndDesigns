@@ -1,0 +1,678 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap");
+
+:root {
+	--machine-bd: #2e2e2e;
+	--h2-color: #8744ff;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: url(https://cdn.hipwallpaper.com/i/30/95/NUH9Dk.jpg) no-repeat;
+	background-size: cover;
+	background-position: top;
+}
+
+body:before {
+	content: "";
+	background: linear-gradient(180deg, #ffffff54, transparent);
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+}
+
+h1 {
+	font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+	margin: 0;
+	color: #da00ff;
+	text-align: center;
+	font-size: 6vh;
+	text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 2px #000, 0 0 10px #5cccff;
+	line-height: 9.75vh;
+}
+
+h1.headline img {
+	max-width: 50px;
+	filter: drop-shadow(0px 0px 2px #8ec44e) drop-shadow(0px 0px 2px #8ec44e)
+		drop-shadow(0px 0px 2px #8ec44e) drop-shadow(0px 0px 2px #8ec44e) invert(1);
+}
+
+.arcade {
+	width: 96vw;
+	height: 100vh;
+	max-width: 1400px;
+	margin: 0 auto;
+	perspective: 100vmin;
+	overflow: hidden;
+}
+
+.top {
+	width: 100%;
+	height: 10vh;
+	border-right: 0.85em solid var(--machine-bd);
+	border-left: 0.85em solid var(--machine-bd);
+	border-bottom: 0.5em solid var(--machine-bd);
+	box-sizing: border-box;
+	border-radius: 0 0 2px 2px;
+	box-shadow: 0em 0em 1em 0 #000 inset;
+	background: url(https://cdn.hipwallpaper.com/i/30/95/NUH9Dk.jpg) no-repeat;
+	background-size: cover;
+	background-position: center 31.5%;
+}
+
+.roof {
+	height: 15vh;
+	transform: rotateX(-78deg);
+	transform-origin: center top;
+	border-right: 1em solid var(--machine-bd);
+	border-left: 1em solid var(--machine-bd);
+	border-top: 0.5em solid var(--machine-bd);
+	border-bottom: 1.5em solid var(--machine-bd);
+	box-sizing: border-box;
+	border-radius: 2px;
+	box-shadow: 0em 0em 1em 0 #000 inset;
+	background: url(https://cdn.hipwallpaper.com/i/30/95/NUH9Dk.jpg) no-repeat;
+	background-size: cover;
+	background-position: center 20.5%;
+}
+
+.roof:before,
+.roof:after {
+	content: "";
+	width: 15%;
+	height: 50%;
+	background: radial-gradient(#ffffff 10%, transparent 15%),
+		radial-gradient(black, #ffffff10), radial-gradient(#fff, #ffffff80);
+	position: absolute;
+	border-radius: 100%;
+	left: 25%;
+	top: 20%;
+	border: 0.5em solid var(--machine-bd);
+	box-sizing: border-box;
+	filter: blur(1px);
+}
+
+.roof:after {
+	right: 25%;
+	left: inherit;
+}
+
+/*** SCREEN ***/
+
+.screen {
+	background: linear-gradient(135deg, #292929 70%, transparent), #121212;
+	height: 70vh;
+	transform: translateY(-7.5vh);
+	width: 87.5%;
+	margin: 0 auto;
+	border: 0.65em solid var(--machine-bd);
+	box-sizing: border-box;
+	border-top-width: 0.25em;
+	padding: 2em;
+	box-shadow: 0em 0em 1em 0 #000 inset;
+	background: url(https://cdn.hipwallpaper.com/i/30/95/NUH9Dk.jpg) no-repeat;
+	background-size: cover;
+	background-position: center 32.5%;
+}
+
+.inner-screen {
+	height: calc(70vh - 5em);
+	transform: translateY(0.35vh);
+	margin: 0 auto;
+	box-sizing: border-box;
+	overflow-x: auto;
+	box-shadow: 0px -1px 0 6px #f1f1f1, 0px 0px 15px 5px #ffffff87,
+		0px 0px 25px 15px #00000080, 10px 10px 20px #383838, -10px -10px 20px #767676;
+	border-radius: 0.5em;
+}
+
+.content {
+	background: #f1f1f1;
+	padding: 1em;
+}
+
+h2.subhead {
+	margin-top: 0;
+	font-family: "Orbitron", Arial, Helvetica, sans-serif;
+	color: var(--h2-color);
+	text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff, 0 0 5px var(--h2-color),
+		0 0 10px var(--h2-color);
+	font-size: 1.9em;
+	border-bottom: 2px dashed #d4bbff;
+	padding-bottom: 1em;
+	margin-top: 0.25em;
+	margin-bottom: 0.5em;
+}
+
+.avatar {
+	background: url(https://appshopper.com/blog/wp-content/uploads/2010/06/space-invaders-icon.png)
+		no-repeat center center #000;
+	background-size: 120%;
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-radius: 0.15em;
+	position: relative;
+	opacity: 0.875;
+	border: 0.25em solid #000000;
+	box-sizing: border-box;
+}
+
+.byline {
+	margin-top: 0;
+	margin-right: 0.5em;
+	font-size: 0.95em;
+	margin-bottom: 0;
+	float: left;
+	padding-left: 0.5em;
+	height: 3em;
+	padding-top: 0.25em;
+	background: #212121;
+	color: #ff8a00;
+	padding-right: 0.5em;
+	border-radius: 0 2px 2px 0;
+	border-left: 2px solid #f1f1f1;
+}
+
+.byline span {
+	font-size: 0.75em;
+	color: #fff;
+}
+
+.dateline {
+	color: #999;
+	font-size: 0.75em;
+	top: 0.25em;
+	position: relative;
+	border-top: 2px solid #000;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(
+		90deg,
+		#ffffffdd 10%,
+		#ffffff80 50%,
+		transparent 100%
+	);
+	left: -0.75em;
+	text-indent: 0.75em;
+	width: 100%;
+	float: left;
+	padding-top: 0.25em;
+}
+
+.article-tags {
+	float: left;
+	margin: 0;
+}
+
+.article-meta {
+	margin-bottom: 2em;
+	height: 4em;
+	border-bottom: 2px dashed #dadada;
+}
+
+.article-tags span {
+	background: linear-gradient(180deg, #ffffff80, #fff0, #ffffff80), #ff5722;
+	padding: 1.2em 0.75em;
+	color: #fff;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	float: right;
+	margin-right: 0.5em;
+	margin-top: 0em;
+	border-radius: 2px;
+	font-weight: 700;
+	font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	text-shadow: 0px 0px 3px #00000080;
+	border: 2px solid #ffffff00;
+}
+
+.article-tags span:hover {
+	background: linear-gradient(180deg, #ffffff80, #fff0, #ffffff80), #121212;
+}
+
+.article-tags span + span {
+	background: linear-gradient(180deg, #ffffff80, #fff0, #ffffff80), #8bc34a;
+}
+
+.article-tags span + span + span {
+	background: linear-gradient(180deg, #ffffff80, #fff0, #ffffff80), #03a9f4;
+}
+
+aside {
+	background: linear-gradient(-90deg, #07aaf3 3px, transparent 4px),
+		linear-gradient(90deg, #07aaf3 3px, transparent 4px);
+	color: #07aaf3;
+	font-family: "Orbitron", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	padding: 0.75em;
+	font-size: 1.5em;
+	float: left;
+	max-width: calc(60% - 3em);
+	margin-bottom: 1em;
+	text-align: center;
+	margin-left: 1em;
+	margin-right: 1em;
+	box-sizing: border-box;
+	transform: rotate(-2deg);
+}
+
+aside:before {
+	content: "\201C";
+	font-size: 1.5em;
+	line-height: 1em;
+}
+
+aside:after {
+	content: "\201D";
+	font-size: 1.5em;
+	line-height: 1em;
+}
+
+figure,
+figure img {
+	width: 100%;
+	margin: 0;
+	position: relative;
+}
+
+figure {
+	transition: all 0.5s ease 0s;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+figure:hover {
+	transform: rotate(-1deg);
+	transition: all 0.5s ease 0s;
+}
+
+figure.crop1 {
+	float: left;
+	width: 40%;
+	margin-right: 1em;
+	transition: all 0.5s ease 0s;
+	background: url(https://appshopper.com/blog/wp-content/uploads/2010/06/space-invaders-icon.png)
+		no-repeat center center;
+	background-size: cover;
+	min-height: 30vh;
+}
+
+figure.crop2 {
+	float: right;
+	width: 40%;
+	margin-left: 1em;
+	transition: all 0.5s ease 0s;
+}
+
+figure.crop2:hover {
+	transform: rotate(2deg);
+	transition: all 0.5s ease 0s;
+}
+
+figure.crop3 {
+	width: 40%;
+	float: left;
+	margin-right: 1em;
+}
+
+figure.crop4 {
+	width: calc(50% - 1em);
+	float: right;
+	margin-left: 1em;
+}
+
+figure.crop5 {
+	float: left;
+	width: calc(50% - 1em);
+	margin-right: 1em;
+}
+
+figure.crop5:hover,
+figure.crop6:hover {
+	transform: rotate(1deg);
+	transition: all 0.5s ease 0s;
+}
+
+figure.crop1 img {
+	margin-top: -37.5%;
+	clip-path: polygon(0 25%, 100% 25%, 100% 100%, 0 100%);
+}
+
+figure.crop3 img {
+	margin-top: -17%;
+	clip-path: polygon(0 11%, 100% 11%, 100% 83%, 0% 83%);
+	margin-bottom: -26%;
+}
+
+figure.crop4 img {
+	margin-top: -38%;
+	clip-path: polygon(0 25%, 100% 25%, 100% 100%, 0 100%);
+}
+
+figure.crop5 img {
+	margin-top: -38%;
+	clip-path: polygon(0 25%, 100% 25%, 100% 100%, 0 100%);
+}
+
+figure.crop6 img {
+	margin-top: -30%;
+	clip-path: polygon(0 20%, 100% 20%, 100% 85%, 0% 85%);
+	margin-bottom: -23%;
+}
+
+figcaption {
+	position: relative;
+	top: -2.8em;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0 #00000080;
+	left: 0.75em;
+	color: #ffffffaa;
+	font-weight: bold;
+	font-family: "Orbitron", Arial, Helvetica, sans-serif;
+	margin-bottom: -1em;
+}
+
+figcaption:before {
+	content: "";
+	border: 0.15em solid #fff;
+	width: 90%;
+	height: 1.25em;
+	position: absolute;
+	left: -1em;
+	top: -0.1em;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(
+		-90deg,
+		#ffffff 10%,
+		#ffffff40 50%,
+		#ffffff40 90%,
+		transparent 100%
+	);
+}
+
+figcaption:after {
+	content: "";
+	border: 0.15em solid #fff;
+	width: 1em;
+	height: 27em;
+	position: absolute;
+	right: 1.75em;
+	margin-top: -100%;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(
+		0deg,
+		#ffffff 10%,
+		#ffffff40 50%,
+		#ffffff40 90%,
+		transparent 100%
+	);
+}
+
+figure.crop6 figcaption {
+	top: -1.85em !important;
+}
+
+figure.crop6 figcaption:after {
+	height: 100vh;
+}
+
+figure:before,
+figure:after {
+	content: "";
+	width: 10%;
+	height: 30%;
+	position: absolute;
+	z-index: 1;
+	border-top: 1em solid #ffffff;
+	border-left: 0.85em solid #ffffff;
+	margin: 1em;
+	filter: drop-shadow(0px 0px 5px #fff) drop-shadow(0px 0px 5px #fff)
+		drop-shadow(0px 0px 5px #fff) drop-shadow(0px 0px 15px #fff)
+		drop-shadow(0px 0px 25px #fff);
+	border-radius: 1em;
+}
+
+figure:after {
+	content: "";
+	width: 15%;
+	height: 40%;
+	position: absolute;
+	z-index: 1;
+	border-bottom: 1em solid #ffffff;
+	border-right: 0.85em solid #ffffff;
+	border-left: 0;
+	border-top: 0;
+	right: 0em;
+	bottom: 0.5em;
+}
+
+h2 {
+	font-family: "Orbitron", Arial, Helvetica, sans-serif;
+	color: var(--h2-color);
+	text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff, 0 0 5px var(--h2-color),
+		0 0 10px var(--h2-color);
+}
+
+.article h2 {
+	border-top: 2px dashed #dadada;
+	padding-top: 1em;
+	margin-top: 1.25em;
+}
+
+.article h2.neque {
+	margin-top: 2.5em;
+}
+
+.curve-top,
+.curve-bot {
+	height: 0.5em;
+	position: fixed;
+	top: 21.25vh;
+	z-index: 2;
+	width: calc(87.5% - 5.25em);
+	margin-left: calc(6.25% + 2.65em - 5px);
+	border-radius: 0.75em 0.75em 0 0;
+	border: 5px solid #f1f1f1;
+	border-bottom-color: #fff0;
+}
+
+.curve-bot {
+	top: inherit;
+	border-radius: 0 0 0.75em 0.75em;
+	border-top-color: #fff0;
+	bottom: 16.5vh;
+	border-bottom-color: #f1f1f1;
+}
+
+aside.voluptatem {
+	float: left;
+	background: linear-gradient(90deg, #8bc34a 3px, transparent 4px),
+		linear-gradient(-90deg, #8bc34a 3px, transparent 4px);
+	width: 45%;
+	color: #8bc34a;
+	transform: rotate(3deg);
+}
+
+aside.labore {
+	float: right;
+	background: linear-gradient(90deg, #07aaf3 3px, transparent 4px),
+		linear-gradient(-90deg, #07aaf3 3px, transparent 4px);
+	width: 45%;
+}
+
+aside.neque {
+	float: right;
+	background: linear-gradient(90deg, #ff5a26 3px, transparent 4px),
+		linear-gradient(-90deg, #ff5a26 3px, transparent 4px);
+	color: #ff5a26;
+	transform: rotate(2deg);
+}
+
+aside.doloremque {
+	background: linear-gradient(-90deg, #cc27e8 3px, transparent 4px),
+		linear-gradient(90deg, #cc27e8 3px, transparent 4px);
+	color: #cc27e8;
+}
+
+aside.aperiam {
+	background: linear-gradient(-90deg, #ff60fd 3px, transparent 4px),
+		linear-gradient(90deg, #ff60fd 3px, transparent 4px);
+	color: #ff60fd;
+	transform: rotate(2deg);
+}
+
+.article p {
+	text-align: justify;
+}
+
+/*** CONTROLS ***/
+
+.controls {
+	height: 30vh;
+	transform: rotateX(47deg);
+	transform-origin: center top;
+	border-right: 0.7em solid var(--machine-bd);
+	border-left: 0.7em solid var(--machine-bd);
+	border-top: 0.5em solid var(--machine-bd);
+	box-sizing: border-box;
+	margin: 0 auto;
+	position: relative;
+	top: -8.25vh;
+	width: 87.5%;
+	box-shadow: 0em 0em 1em 0 #000 inset;
+	z-index: 2;
+	background: url(https://cdn.hipwallpaper.com/i/30/95/NUH9Dk.jpg) no-repeat;
+	background-size: cover;
+	background-position: center 31.5%;
+}
+
+.joystick {
+	background: black;
+	width: 4em;
+	height: 4em;
+	border-radius: 100%;
+	box-shadow: inset 0 0 10px 2px #ffffff24;
+	border: 5px solid #2e2e2e;
+	left: 25%;
+	top: 10%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transform: rotate(-6deg);
+	transition: all 0.5s ease 0s;
+}
+
+.joystick:before {
+	background: linear-gradient(93deg, #c1c1c1, #101010);
+	width: 1.15em;
+	height: 5em;
+	position: absolute;
+	transform: translate3d(1.325em, -2.75em, 0em);
+	content: "";
+	transform-origin: center top;
+	border-radius: 1em;
+	box-shadow: 20px 5px 5px 0 #00000080;
+}
+
+.joystick:after {
+	content: "";
+	width: 3.65em;
+	height: 3.65em;
+	background: radial-gradient(ellipse at 70% 55%, #00000080, transparent), red;
+	position: absolute;
+	border-radius: 100%;
+	top: -5.75em;
+	left: 0.15em;
+	box-shadow: 17px -5px 5px 0 #00000080;
+}
+
+.joystick:hover {
+	transform: rotate(6deg);
+	transition: all 0.5s ease 0s;
+}
+
+.buttons {
+	width: 10em;
+	height: 6em;
+	left: 60%;
+	position: absolute;
+	top: 4%;
+}
+
+.btn {
+	width: 3em;
+	height: 3em;
+	position: absolute;
+	background: #333;
+	border-radius: 100%;
+	top: 0.5em;
+	left: 1em;
+	box-shadow: 0.15em 0.25em 0em 0em #171717;
+}
+
+.btn + .btn {
+	left: 6em;
+	top: 2em;
+}
+
+.btn:before {
+	content: "";
+	width: 74%;
+	height: 74%;
+	position: absolute;
+	background: #ffeb3b;
+	border-radius: 100%;
+	top: 10%;
+	left: 10%;
+	box-shadow: 0.1em 0.2em 0 0 #b3a100;
+	transition: all 0.25s ease 0s;
+}
+
+.btn + .btn:before {
+	background: #007fe4;
+	box-shadow: 0.1em 0.2em 0 0 #004984;
+}
+
+.btn:hover:before {
+	top: calc(10% + 0.1em);
+	left: calc(10% + 0.05em);
+	box-shadow: none;
+	transition: all 0.25s ease 0s;
+}
+
+/*** MEDIA QUERIES ***/
+
+@media only screen and (max-width: 980px) {
+	figcaption {
+		font-size: 0.5em;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	figure {
+		width: 100% !important;
+		margin: 1em 0 !important;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	aside {
+		width: calc(100% - 2em) !important;
+		max-width: none;
+	}
+	p.article-tags {
+		max-width: 40%;
+		float: right;
+		margin-top: -0.9em;
+	}
+	p.article-tags span {
+		padding: 0.65em;
+		font-size: 0.65em;
+		margin: 0.1em;
+	}
+}
