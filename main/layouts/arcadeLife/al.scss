@@ -1,0 +1,165 @@
+// Template SCSS is in an asset file
+body {
+    background: #fafcff;    
+}
+
+p {
+    line-height: 28px;
+}
+
+figure {
+    width: 100%;
+    border-radius: 15px;
+    max-height: 200px;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    transition: height 0.5s ease;
+    
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transform: translateY(-25%);
+        filter: grayscale(60%);
+        opacity: 0.5;
+        transition: all 0.5s;
+    }
+    
+    figcaption {
+        mix-blend-mode: difference;
+        color: #fff;
+        padding: 16px;
+        position: absolute;
+        top: 0;
+    }
+    
+    &:hover {
+        max-height: max-content;
+        // transform: scaleY(2); /* Equal to scaleX(2) scaleY(0.5) */
+
+        
+        img { 
+            transform: translateY(0); 
+            filter: grayscale(0);
+            opacity: 1;
+        }
+    }
+}
+
+aside {
+    margin: auto;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    
+    
+    p {
+        padding-bottom: 8px;
+        line-height: 40px;
+    }
+    
+    &::before,
+    &::after {
+        content: ' ';
+        background: map-get($colors, b);
+        height: 2px;
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+}
+
+h3 {
+    font-size: 32px;
+    margin: 32px 0;
+    line-height: 80px;
+    
+    &::after {
+        content: ' ';
+        background: map-get($colors, b);
+        height: 2px;
+        display: block;
+    }
+}
+
+.byline {
+    font-weight: 800;
+}
+
+.article-tags .tag {
+    padding: 2px 8px;
+    border-radius: 5px;
+    background: map-get($colors, b);
+    color: map-get($colors, w);
+    float: right;
+    margin: 0 4px;
+}
+
+.ail-containers__800 {
+    max-width: 800px;
+    margin: auto;
+}
+
+.aic-header {
+    padding: 24px;
+    margin-bottom: 24px;
+    background: map-get($colors, w);
+    
+    &__content {
+         display: grid;
+        grid-gap: 16px;
+        grid-auto-columns: minmax(50px, auto);
+        grid-template-areas: 'a a';
+        align-items: center;
+    }
+    
+    svg {
+        fill: map-get($colors, b);
+    }
+    
+    h1 {
+        font-size: 64px;
+        margin: 0;
+        padding: 0;
+        font-family: $open;
+        font-weight: 100;
+    }
+}
+
+.aic-article {
+    &__title {
+        display: grid;
+        grid-gap: 16px;
+        grid-auto-columns: minmax(10px, auto);
+        grid-template-areas: 'a a';
+        align-items: center;
+    }
+    
+    &__header {
+        padding: 32px;
+        background: map-get($colors, w);
+        border-radius: 15px;
+        box-shadow: 8px 8px 32px #0cbfef24, -8px -8px 32px #0cbfef24, -8px 8px 32px #0cbfef24, 8px -8px 32px #0cbfef24;
+        margin-bottom: 40px;
+        
+        .article-meta {
+            display: grid;
+            grid-auto-columns: auto;
+            grid-template-areas: 'a a a';
+            text-align: left;
+            
+            p {
+                margin:0;
+                padding:0;
+            }
+        }
+        
+        h2 {
+            font-size: 40px;
+            line-height: 52px;
+            margin-bottom: 16px;
+        }
+    }
+}
