@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Montserrat:wght@400;700;900&family=Roboto+Mono:wght@500&display=swap");
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #262626;
+}
+$magfont: "Roboto Mono", monospace;
+$titlefont: "Dela Gothic One", cursive;
+$pfonts: "Montserrat", sans-serif;
+$S: 570px;
+$M: 900px;
+$L: 1024px;
+
+// media queries
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == S {
+		@media only screen and (max-width: $S) {
+			@content;
+		}
+	} @else if $breakpoint == M {
+		@media only screen and (max-width: $M) {
+			@content;
+		}
+	} @else if $breakpoint == L {
+		@media only screen and (max-width: $L) {
+			@content;
+		}
+	}
+}
+
+.hero--img {
+	position: absolute;
+	top: -300px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1;
+	max-width: 1200px;
+	overflow: hidden;
+}
+.container {
+	position: absolute;
+	border-radius: 8px;
+	top: 400px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+	width: 100%;
+	max-width: 1050px;
+	padding: 3rem 4rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(22, auto);
+	gap: 20px;
+	z-index: 10;
+}
+
+.subtitle {
+	font-family: $titlefont;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 28px;
+}
+
+.txt-content {
+	font-family: $pfonts;
+	line-height: 2;
+}
+
+.headline {
+	font-family: $magfont;
+	text-align: center;
+}
+
+.subhead {
+	font-family: $titlefont;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 35px;
+}
+
+.aside {
+	font-family: $magfont;
+}
+
+figcaption {
+	font-family: $magfont;
+	font-size: 14px;
+	text-align: center;
+}
+
+@for $i from 1 through 22 {
+	.row--#{$i} {
+		grid-row: $i;
+	}
+}
+
+.row-full {
+	grid-column: 1/-1;
+}
+
+.row-quarter {
+	&--left {
+		grid-column: 1/2;
+	}
+	&--right {
+		grid-column: 2/-1;
+	}
+}
+
+.row-half {
+	&--left {
+		grid-column: 1/3;
+	}
+	&--right {
+		grid-column: 3/-1;
+	}
+}
+
+.img--hide {
+	overflow: hidden;
+}
+.img--center {
+	margin: 0 auto;
+}
+
+.row--3 {
+	text-align: right;
+	font-family: $magfont;
+	p {
+		margin: 0;
+		font-size: 12px;
+	}
+	.article-tags {
+		text-transform: uppercase;
+		text-align: left;
+		position: absolute;
+		top: 350px;
+		left: -150px;
+		transform: rotate(-90deg);
+		.tag {
+			background: #faebd7;
+			padding: 0.8em 0.6em;
+		}
+	}
+}
+
+.row--4.aside {
+	display: flex;
+	align-items: center;
+	div {
+		width: 60%;
+		margin: 0 auto;
+		line-height: 4;
+		p {
+			background: yellow;
+		}
+		@include respond(M) {
+			width: 100%;
+		}
+	}
+}
+.row--4.txt-content {
+	p:first-child::first-line {
+		font-weight: bold;
+	}
+}
+
+.row--5,
+.row--13,
+.row--19 {
+	@include respond(M) {
+		text-align: center;
+		img {
+			width: 50%;
+		}
+	}
+}
+
+.row--8.row-half--left,
+.row--11.row-half--right,
+.row--15.row-half--left {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	figure {
+		margin: 0;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.row--8.row-half--right,
+.row--11.row-half--left,
+.row--15.row-half--right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row--16.aside {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aside {
+		p {
+			width: 100%;
+			line-height: 4;
+			background: yellow;
+		}
+	}
+}
+.row--21.aside {
+	display: flex;
+	justify-content: center;
+	aside {
+		p {
+			line-height: 4;
+			background: yellow;
+		}
+	}
+}
